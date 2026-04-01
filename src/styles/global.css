@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-dark-bg: #0F0B0A;
+    --color-dark-primary: #121213;
+    --color-dark-primary-alt: #121313;
+    --color-dark-secondary: #1B1813;
+    --color-dark-tertiary: #232323;
+    --color-dark-border: #28282B;
+    --color-dark-midnight: #191970;
+
+    --color-light-primary: #ECEFF1;
+    --color-light-warm: #F7E7CE;
+    --color-light-cream: #FFF2E1;
+    --color-light-sand: #F7E998;
+    --color-light-taupe: #A79277;
+
+    --color-brand-red: #FF4747;
+    --color-brand-orange: #FF6044;
+    --color-brand-green: #102C26;
+
+    /* Semantic Button Hover Interactions protecting Dark Mode polarity */
+    --color-btn-primary-hover: var(--color-dark-tertiary);
+    --color-btn-primary-text-hover: var(--color-light-cream);
+    --color-btn-secondary-hover: var(--color-dark-tertiary);
+  }
+
+  .light-mode {
+    /* Inverting colors semantically! */
+    --color-dark-bg: #FAF5EF;
+    /* warm light off-white */
+    --color-dark-primary: #EAE3DE;
+    --color-dark-primary-alt: #E2DBD6;
+    --color-dark-secondary: #EBE5E0;
+    --color-dark-tertiary: #FFFFFF;
+    --color-dark-border: #D1C9C4;
+    --color-dark-midnight: #DDE5ED;
+    /* cool contrasting background */
+
+    --color-light-primary: #161211;
+    /* pitch dark slate */
+    --color-light-warm: #201A18;
+    --color-light-cream: #282220;
+    --color-light-sand: #5D4D47;
+    --color-light-taupe: #4A3E38;
+
+    --color-brand-red: #E83838;
+    --color-brand-orange: #E85133;
+    --color-brand-green: #0E2922;
+
+    /* Semantic Button Hover Interactions redesigned for Light Mode contrast */
+    --color-btn-primary-hover: var(--color-light-taupe);
+    --color-btn-primary-text-hover: var(--color-dark-bg);
+    --color-btn-secondary-hover: var(--color-dark-border);
+  }
+
+  html {
+    background-color: var(--color-dark-bg);
+    color: var(--color-light-primary);
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+
+  body {
+    @apply font-sans antialiased selection:bg-brand-red selection:text-light-cream bg-dark-bg text-light-primary overflow-x-hidden;
+    cursor: auto; /* we will handle the custom cursor blending later */
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display tracking-tight text-light-warm;
+  }
+}
+
+@layer components {
+  .noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-repeat: repeat;
+  }
+
+  .premium-btn {
+    @apply relative overflow-hidden inline-flex items-center justify-center rounded-full px-8 py-4 font-sans font-medium text-sm tracking-wide text-dark-bg bg-light-cream transition-transform duration-300 hover:scale-105 active:scale-95 z-10;
+  }
+
+  .premium-btn::before {
+    content: '';
+    @apply absolute inset-0 bg-brand-red scale-x-0 origin-left transition-transform duration-500 ease-premium -z-10 rounded-full;
+  }
+
+  .premium-btn:hover::before {
+    @apply scale-x-100;
+  }
+
+  .premium-btn:hover {
+    @apply text-light-cream;
+  }
+
+  .premium-link {
+    @apply relative font-sans text-sm font-medium text-light-taupe hover:text-light-cream transition-colors duration-300;
+  }
+
+  .premium-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-full h-[1px] bg-brand-orange scale-x-0 origin-right transition-transform duration-500 ease-out;
+  }
+
+  .premium-link:hover::after {
+    @apply scale-x-100 origin-left;
+  }
+
+  .border-gradient {
+    position: relative;
+    background: linear-gradient(to bottom, theme('colors.dark.tertiary'), theme('colors.dark.bg'));
+    border: 1px solid theme('colors.dark.border');
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 1px theme('colors.dark.border');
+    color: transparent;
+  }
+
+  .text-outline-bright {
+    -webkit-text-stroke: 1px theme('colors.light.primary');
+    opacity: 0.4;
+    color: transparent;
+  }
+
+  .text-outline-hover {
+    -webkit-text-stroke: 1px theme('colors.light.taupe');
+    color: theme('colors.light.warm');
+    transition: all 0.5s ease;
+  }
+}
+
+/* Custom Scrollbar */
+@layer base {
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-dark-bg);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-dark-border);
+    border-radius: 9999px;
+    border: 2px solid var(--color-dark-bg);
+    background-clip: padding-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--color-light-taupe);
+  }
+}
+
+/* Layout Utilities (No default padding, break grid) */
+@layer utilities {
+  .full-bleed {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+}
