@@ -54,7 +54,6 @@ export const Navbar: React.FC = () => {
       ctaThemeClasses = "bg-light-primary text-dark-bg hover:bg-light-taupe hover:text-dark-bg border border-transparent";
     }
   }
-
   return (
     <>
       <motion.header 
@@ -142,7 +141,7 @@ export const Navbar: React.FC = () => {
             animate={{ opacity: 1, clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)' }}
             exit={{ opacity: 0, clipPath: 'polygon(0 0, 100% 0, 100% 0, 0 0)' }}
             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-            className="fixed inset-0 bg-dark-bg z-[90] flex flex-col justify-center px-6 md:px-12 pt-24 pb-12 overflow-y-auto"
+            className="fixed inset-0 bg-dark-bg z-[90] flex flex-col justify-center px-6 md:px-12 pt-24 pb-12 overflow-y-auto overflow-x-hidden"
           >
             <div className="w-full h-full flex flex-col lg:flex-row justify-between lg:items-end mt-12 lg:mt-0">
               
@@ -160,7 +159,7 @@ export const Navbar: React.FC = () => {
                       animate={{ y: 0 }}
                       exit={{ y: "100%" }}
                       transition={{ delay: 0.1 * i, duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-                      className="group flex flex-col font-display font-bold text-4xl md:text-5xl lg:text-7xl leading-[0.85] w-max uppercase relative"
+                      className="group flex flex-col font-display font-bold text-[clamp(2rem,8vw,5.5rem)] leading-[0.85] w-max uppercase relative"
                     >
                       <span className="text-outline-bright transition-all duration-500 group-hover:text-light-warm group-hover:-webkit-text-stroke-transparent group-hover:opacity-100">{item}</span>
                       <span className="absolute left-0 top-1/2 -translate-y-1/2 w-0 h-[0.1em] bg-brand-orange transition-all duration-500 ease-premium group-hover:w-full mix-blend-difference pointer-events-none"></span>

@@ -8,17 +8,17 @@ export const ExperienceSection: React.FC = () => {
   const linkedInUrl = "https://www.linkedin.com/in/devm27/"; // Update with actual URL
 
   return (
-    <section id="experience" className="py-32 md:py-48 bg-dark-bg relative overflow-hidden">
+    <section id="experience" className="py-16 md:py-32 lg:py-48 bg-dark-bg relative overflow-hidden">
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12">
         
         {/* Massive Section Header */}
-        <div className="mb-32 flex flex-col md:flex-row md:items-end md:justify-between border-b border-dark-border pb-12">
+        <div className="mb-16 md:mb-32 flex flex-col md:flex-row md:items-end md:justify-between border-b border-dark-border pb-8 md:pb-12">
           <motion.h2 
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-            className="text-5xl md:text-8xl font-display font-medium text-light-primary tracking-tighter">
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display font-medium text-light-primary tracking-tighter">
             been there,<br />
             <span className="text-light-taupe italic">done that</span>
           </motion.h2>
@@ -62,18 +62,18 @@ export const ExperienceSection: React.FC = () => {
         </div>
 
         {/* Narrative, Staggered Experience Rows instead of a stiff timeline */}
-        <div className="flex flex-col gap-24">
+        <div className="flex flex-col gap-14 md:gap-24">
           {experienceData.map((item, index) => (
             <motion.div 
               key={item.id}
               initial={{ opacity: 0, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-150px" }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
-              className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 group"
+              className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 group"
             >
               {/* Year & Metadata (Left Aligned, spanning 3 cols) */}
-              <div className="lg:col-span-3 flex flex-col items-start gap-3">
+              <div className="lg:col-span-3 flex flex-row flex-wrap lg:flex-col items-start gap-3">
                 
                 {/* 💻 Cyber-Styled Terminal ID Badge */}
                 <span className="inline-flex items-center gap-2 px-3 py-1 border border-dark-border rounded text-xs font-mono tracking-widest flex-wrap sm:whitespace-nowrap bg-dark-bg/50">
@@ -95,10 +95,10 @@ export const ExperienceSection: React.FC = () => {
 
               {/* Core Info (Center, span 5 cols) */}
               <div className="lg:col-span-5">
-                <h3 className="text-3xl md:text-4xl font-display font-medium text-light-warm mb-2 group-hover:text-brand-red transition-colors duration-500">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-medium text-light-warm mb-2 group-hover:text-brand-red transition-colors duration-500">
                   {item.role}
                 </h3>
-                <h4 className="text-xl text-light-taupe font-light mb-8">
+                <h4 className="text-base md:text-xl text-light-taupe font-light mb-4 md:mb-8">
                   {item.company}
                 </h4>
               </div>

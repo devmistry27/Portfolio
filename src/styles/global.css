@@ -88,7 +88,9 @@
 
   body {
     @apply font-sans antialiased selection:bg-brand-red selection:text-light-cream bg-dark-bg text-light-primary overflow-x-hidden;
-    cursor: auto; /* we will handle the custom cursor blending later */
+    cursor: auto;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
   }
 
   h1,

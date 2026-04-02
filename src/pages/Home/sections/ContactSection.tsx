@@ -13,7 +13,7 @@ export const ContactSection: React.FC = () => {
   const footerY = useTransform(scrollYProgress, [0, 1], ["-20%", "0%"]);
 
   return (
-    <section id="contact" ref={containerRef} className="relative bg-brand-red text-dark-bg overflow-hidden min-h-screen flex flex-col justify-between pt-32 pb-12 w-full clip-path-footer">
+    <section id="contact" ref={containerRef} className="relative bg-brand-red text-dark-bg overflow-hidden min-h-screen flex flex-col justify-between pt-20 md:pt-32 pb-12 w-full clip-path-footer">
       
       {/* Immersive Background element */}
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none noise-overlay mix-blend-multiply"></div>
@@ -21,12 +21,12 @@ export const ContactSection: React.FC = () => {
       <motion.div style={{ y: footerY }} className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full flex-grow flex flex-col justify-center">
         
         {/* Top Contact Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 mb-16 md:mb-24">
           <div>
-            <h2 className="text-[12vw] md:text-9xl font-display font-bold leading-[0.8] tracking-tighter uppercase mb-6">
+            <h2 className="text-[clamp(3.5rem,14vw,9rem)] font-display font-bold leading-[0.8] tracking-tighter uppercase mb-4 md:mb-6">
               Init<br/>Contact
             </h2>
-            <p className="text-dark-primary/80 text-xl md:text-2xl font-medium max-w-lg">
+            <p className="text-dark-primary/80 text-base sm:text-lg md:text-xl lg:text-2xl font-medium max-w-lg leading-relaxed">
               Whether we're working to move ML models to production, crafting beautiful interfaces, or just geeking out over football, PC gaming, tech releases, and sketching—let's connect
             </p>
           </div>
@@ -36,13 +36,13 @@ export const ContactSection: React.FC = () => {
               href="https://mail.google.com/mail/?view=cm&fs=1&to=devmistry1027@gmail.com" 
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[clamp(1.25rem,6.5vw,2.25rem)] sm:text-4xl md:text-5xl font-display font-medium border-b-2 border-dark-bg/20 hover:border-dark-bg transition-colors pb-2 w-full sm:w-max max-w-full break-all sm:break-normal group flex items-center"
+              className="text-[clamp(1.1rem,5.5vw,2.25rem)] font-display font-medium border-b-2 border-dark-bg/20 hover:border-dark-bg transition-colors pb-2 w-full break-all sm:break-normal group flex items-center gap-2"
             >
               devmistry1027@gmail.com
-              <ArrowUpRight strokeWidth={3} className="ml-4 opacity-0 -translate-x-4 translate-y-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300" size={48} />
+              <ArrowUpRight strokeWidth={3} className="ml-2 sm:ml-4 opacity-0 -translate-x-4 translate-y-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300 shrink-0" size={36} />
             </a>
             
-            <div className="mt-16 font-medium text-lg">
+            <div className="mt-10 md:mt-16 font-medium text-base md:text-lg">
               <div className="flex flex-col gap-4">
                 <span className="text-sm font-mono uppercase tracking-widest text-dark-bg/60 mb-2">Socials</span>
                 <div className="flex flex-wrap gap-8">
@@ -68,14 +68,14 @@ export const ContactSection: React.FC = () => {
       </motion.div>
 
       {/* Footer Bottom Strip */}
-      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full pt-8 border-t border-dark-bg/20 flex flex-col md:flex-row justify-between items-center gap-4 text-sm font-medium h-max relative z-20">
+      <div className="max-w-[1400px] mx-auto px-6 lg:px-12 w-full pt-8 border-t border-dark-bg/20 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs sm:text-sm font-medium h-max relative z-20">
         <div>© 2026 Dev Mistry.</div>
-        <div className="flex items-center gap-2 md:absolute md:left-1/2 md:-translate-x-1/2">
+        <div className="flex items-center gap-2 sm:absolute sm:left-1/2 sm:-translate-x-1/2">
           Crafted with intent.
         </div>
         <button 
           onClick={() => window.scrollTo(0, 0)} 
-          className="hover:opacity-60 transition-opacity uppercase font-mono tracking-widest">
+          className="hover:opacity-60 transition-opacity uppercase font-mono tracking-widest text-xs sm:text-sm text-center">
           You definitely missed something ↑
         </button>
       </div>

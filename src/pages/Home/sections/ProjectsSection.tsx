@@ -18,20 +18,20 @@ export const ProjectsSection: React.FC = () => {
     <section 
       id="projects" 
       ref={containerRef}
-      className="relative bg-dark-bg min-h-screen lg:min-h-[300vh] w-full h-auto"
+      className="relative bg-dark-bg min-h-screen lg:min-h-[300vh] w-full h-auto overflow-hidden"
     >
       <div className="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-24 h-full relative">
         
         {/* Sticky Header Left Column */}
         <div className="lg:col-span-5 relative h-auto lg:h-full">
-          <div className="lg:sticky top-0 h-auto lg:h-screen flex flex-col justify-center py-16 lg:py-24">
+          <div className="lg:sticky top-0 h-auto lg:h-screen flex flex-col justify-center py-12 md:py-16 lg:py-24">
             <motion.h2 
-              className="text-6xl md:text-8xl font-display font-medium text-light-warm uppercase tracking-tighter leading-[0.85] mb-8"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-display font-medium text-light-warm uppercase tracking-tighter leading-[0.85] mb-6 md:mb-8"
             >
               Selected<br/>
-              <span className="text-outline-bright italic inline-block transform -translate-x-2">Works</span>
+              <span className="text-outline-bright italic inline-block transform -translate-x-1 md:-translate-x-2">Works</span>
             </motion.h2>
-            <p className="text-light-taupe text-lg max-w-sm font-light leading-relaxed mb-12">
+            <p className="text-light-taupe text-base md:text-lg max-w-sm font-light leading-relaxed mb-8 md:mb-12">
               A collection of my most recent projects.
             </p>
 
@@ -41,7 +41,7 @@ export const ProjectsSection: React.FC = () => {
               target="_blank" 
               rel="noopener noreferrer" 
               aria-label="GitHub Profile"
-              className="group relative hidden lg:inline-flex items-center gap-3 px-5 py-3 rounded-full bg-dark-tertiary/50 border border-dark-border transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_4px_20px_rgba(255,102,0,0.15)] hover:border-brand-orange/40 w-fit"
+              className="group relative inline-flex items-center gap-3 px-5 py-3 rounded-full bg-dark-tertiary/50 border border-dark-border transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_4px_20px_rgba(255,102,0,0.15)] hover:border-brand-orange/40 w-fit"
             >
               <Github className="w-5 h-5 text-light-taupe group-hover:text-brand-orange transition-colors duration-300" strokeWidth={1.5} />
               <div className="flex items-center gap-2">
@@ -58,7 +58,7 @@ export const ProjectsSection: React.FC = () => {
         </div>
 
         {/* Scrolling Projects Right Column */}
-        <div className="lg:col-span-7 flex flex-col gap-24 lg:gap-[30vh] pt-12 lg:pt-[20vh] pb-24 lg:pb-[50vh] relative z-10">
+        <div className="lg:col-span-7 flex flex-col gap-16 md:gap-24 lg:gap-[30vh] pt-8 md:pt-12 lg:pt-[20vh] pb-16 md:pb-24 lg:pb-[50vh] relative z-10">
           {projectsData.map((project, i) => {
             const isEven = i % 2 === 0;
             return (
@@ -97,14 +97,14 @@ const ProjectCard = ({ project, index, isEven }: { project: Project, index: numb
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
-      className={`group flex flex-col ${isEven ? 'items-start' : 'items-end'}`}
+      className={`group flex flex-col items-start lg:${isEven ? 'items-start' : 'items-end'}`}
     >
       {/* Numbering */}
       <div className="text-light-taupe font-mono text-sm mb-4">
         (0{index + 1}) — {project.category}
       </div>
 
-      <Link to={`/project/${project.id}`} className="relative block w-full md:w-[85%] lg:w-[90%] overflow-hidden bg-dark-tertiary">
+      <Link to={`/project/${project.id}`} className="relative block w-full md:w-[90%] lg:w-[90%] overflow-hidden bg-dark-tertiary">
         <div className="absolute inset-0 bg-dark-bg/40 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
         <motion.img 
           style={{ y: imgY, scale: 1.15 }}
@@ -121,12 +121,12 @@ const ProjectCard = ({ project, index, isEven }: { project: Project, index: numb
         </div>
       </Link>
 
-      <div className="mt-8 flex flex-col items-start w-full md:w-[85%] lg:w-[90%]">
+      <div className="mt-6 md:mt-8 flex flex-col items-start w-full md:w-[90%] lg:w-[90%]">
         <Link 
           to={`/project/${project.id}`} 
           className="flex flex-row items-center gap-4 sm:gap-6 w-fit group/header cursor-pointer"
         >
-          <h3 className="text-3xl md:text-4xl font-display font-medium text-light-warm group-hover/header:text-brand-orange transition-colors duration-300">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-medium text-light-warm group-hover/header:text-brand-orange transition-colors duration-300">
             {project.title}
           </h3>
           

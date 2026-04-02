@@ -7,12 +7,12 @@ export const AboutSection: React.FC = () => {
   const isInView = useInView(ref, { once: true, margin: "-20%" });
 
   return (
-    <section id="about" className="relative py-20 md:py-32 bg-dark-secondary overflow-hidden">
+    <section id="about" className="relative py-16 md:py-32 bg-dark-secondary overflow-hidden">
       
       {/* Infinite scrolling marquee background */}
-      <div className="absolute top-1/4 left-0 w-full whitespace-nowrap opacity-[0.03] select-none pointer-events-none z-0 transform -rotate-2">
-        <h2 className="text-[15vw] font-display font-bold uppercase animate-marquee-left">
-          Data Science • Machine Learning • Deep Learning 
+      <div className="absolute top-1/4 left-0 w-[200%] whitespace-nowrap opacity-[0.03] select-none pointer-events-none z-0 transform -rotate-2 overflow-hidden">
+        <h2 className="text-[15vw] font-display font-bold uppercase animate-marquee-left inline-block">
+          Data Science • Machine Learning • Deep Learning •&nbsp;
         </h2>
       </div>
 
@@ -25,7 +25,7 @@ export const AboutSection: React.FC = () => {
               initial={{ opacity: 0, x: -50 }}
               animate={isInView ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
-              className="text-4xl md:text-5xl font-display font-medium text-light-warm uppercase tracking-tight"
+              className="text-3xl sm:text-4xl md:text-5xl font-display font-medium text-light-warm uppercase tracking-tight"
             >
               The Dev<br />
               Behind <span className="text-brand-red italic">Dev</span>
@@ -45,7 +45,7 @@ export const AboutSection: React.FC = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 1, delay: 0.1, ease: [0.76, 0, 0.24, 1] }}
-              className="text-2xl md:text-3xl lg:text-4xl font-light leading-snug text-light-primary"
+              className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-light leading-snug text-light-primary"
             >
               I develop AI systems that think smart and look sharp. I specialize in <span className="text-brand-orange drop-shadow-[0_0_8px_rgba(255,102,0,0.5)] font-normal">Machine Learning</span> and <span className="text-brand-orange drop-shadow-[0_0_8px_rgba(255,102,0,0.5)] font-normal">Deep Learning</span>, building tools that not only crunch numbers but also <span className="text-light-warm font-medium">solve real-world problems</span> and feel <span className="text-light-warm font-medium italic">intuitive to use.</span>
             </motion.p>
@@ -70,20 +70,20 @@ export const AboutSection: React.FC = () => {
 
               {/* Metadata Area */}
               <div className="xl:col-span-5 flex items-start xl:justify-end">
-                <div className="p-6 md:p-8 border-gradient bg-dark-bg/50 w-full sm:w-fit h-fit transition-all duration-300">
+                <div className="p-5 md:p-8 border-gradient bg-dark-bg/50 w-full h-fit transition-all duration-300">
                   <div className="text-brand-orange font-mono text-sm mb-6">++ Metadata</div>
                   <ul className="space-y-4 font-mono text-sm tracking-wide">
-                    <li className="flex items-start justify-between gap-8 sm:gap-16 border-b border-dark-border pb-3">
-                      <span className="text-light-taupe mt-1">Focus</span>
+                    <li className="flex items-start justify-between gap-6 border-b border-dark-border pb-3">
+                      <span className="text-light-taupe mt-1 shrink-0">Focus</span>
                       <span className="text-light-primary text-right">Machine Learning<br/>Deep Learning</span>
                     </li>
-                    <li className="flex items-start justify-between gap-8 sm:gap-16 border-b border-dark-border pb-3">
-                      <span className="text-light-taupe mt-1">Stack</span>
+                    <li className="flex items-start justify-between gap-6 border-b border-dark-border pb-3">
+                      <span className="text-light-taupe mt-1 shrink-0">Stack</span>
                       <span className="text-light-primary text-right">Python<br/>PyTorch<br/>Tensorflow</span>
                     </li>
-                    <li className="flex items-start justify-between gap-8 sm:gap-16 border-b border-dark-border pb-1">
-                      <span className="text-light-taupe mt-1">Hobbies</span>
-                      <span className="text-light-primary text-right w-32 sm:w-40 leading-relaxed">Pitch to Pixels to Playstation to Pencil</span>
+                    <li className="flex items-start justify-between gap-6 border-b border-dark-border pb-1">
+                      <span className="text-light-taupe mt-1 shrink-0">Hobbies</span>
+                      <span className="text-light-primary text-right leading-relaxed">Pitch to Pixels to Playstation to Pencil</span>
                     </li>
                   </ul>
                 </div>
@@ -100,7 +100,7 @@ export const AboutSection: React.FC = () => {
           transition={{ duration: 1, delay: 0.4, ease: [0.76, 0, 0.24, 1] }}
           className="mt-12 md:mt-16 w-full border-y border-dark-border py-8 md:py-12 bg-dark-bg/30 backdrop-blur-sm transition-colors duration-700 hover:bg-dark-tertiary/20 flex justify-center items-center overflow-hidden"
         >
-          <h3 className="font-display font-medium text-xl sm:text-2xl md:text-3xl lg:text-4xl tracking-tight uppercase text-center px-4 whitespace-normal break-words text-balance md:whitespace-nowrap md:text-nowrap bg-gradient-to-br from-light-cream via-light-taupe to-brand-orange bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,102,0,0.15)]">
+          <h3 className="font-display font-medium text-base sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl tracking-tight uppercase text-center px-4 whitespace-normal break-words text-balance bg-gradient-to-br from-light-cream via-light-taupe to-brand-orange bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(255,102,0,0.15)]">
             ENGINEER BY DAY, GAMER BY NIGHT, ARTIST AT TIMES.
           </h3>
         </motion.div>

@@ -55,9 +55,9 @@ export const ProjectDetail: React.FC = () => {
             <div className="inline-flex items-center px-3 py-1 rounded-full bg-navy-800 border border-light-300/10 text-xs font-mono text-tech-cyan mb-4">
               {project.category}
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-light-100 mb-6">{project.title}</h1>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-light-100 mb-6">{project.title}</h1>
             
-            <div className="flex flex-wrap items-center gap-5 mt-8">
+            <div className="flex flex-wrap items-center gap-3 md:gap-5 mt-6 md:mt-8">
               <a href={project.githubUrl} target="_blank" rel="noreferrer" className="group relative flex items-center gap-3 px-7 py-3.5 bg-transparent border border-dark-border rounded-full hover:border-light-taupe/50 hover:bg-light-taupe/5 transition-all duration-500 ease-premium text-light-taupe hover:text-light-cream font-mono text-xs uppercase tracking-widest overflow-hidden">
                 <Github size={16} className="relative z-10 group-hover:scale-110 transition-transform duration-500 ease-premium" />
                 <span className="relative z-10">Source Code</span>
@@ -78,21 +78,21 @@ export const ProjectDetail: React.FC = () => {
           </motion.div>
 
           {/* Content Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
             {/* Main Content */}
             <motion.div variants={fadeInUp} className="md:col-span-2 space-y-8">
               <section>
-                <h3 className="text-xl md:text-2xl font-display font-medium text-light-warm mb-6 flex items-center gap-3">
+                <h3 className="text-lg md:text-xl lg:text-2xl font-display font-medium text-light-warm mb-4 md:mb-6 flex items-center gap-3">
                   <span className="text-brand-orange text-sm font-mono tracking-widest">(01)</span> 
                   Overview
                 </h3>
-                <p className="text-light-taupe leading-relaxed font-sans text-base whitespace-pre-line">
+                <p className="text-light-taupe leading-relaxed font-sans text-sm md:text-base whitespace-pre-line">
                   {project.longDescription}
                 </p>
               </section>
               
               <section>
-                <h3 className="text-xl md:text-2xl font-display font-medium text-light-warm mb-6 flex items-center gap-3">
+                <h3 className="text-lg md:text-xl lg:text-2xl font-display font-medium text-light-warm mb-4 md:mb-6 flex items-center gap-3">
                   <span className="text-brand-orange text-sm font-mono tracking-widest">(02)</span> 
                   Architecture Flow
                 </h3>

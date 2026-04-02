@@ -7,7 +7,7 @@ export const SkillsSection: React.FC = () => {
   const isInView = useInView(ref, { once: true, margin: "-20%" });
 
   return (
-    <section id="skills" className="py-32 md:py-48 bg-dark-bg relative overflow-hidden flex flex-col items-center">
+    <section id="skills" className="py-16 md:py-32 lg:py-48 bg-dark-bg relative overflow-hidden flex flex-col items-center">
       
       {/* Header Area */}
       <div className="max-w-[1200px] w-full px-6 lg:px-12 mb-12 relative z-10 pointer-events-none" ref={ref}>
@@ -17,10 +17,10 @@ export const SkillsSection: React.FC = () => {
           transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
           className="flex flex-col gap-6"
         >
-          <h2 className="text-4xl md:text-6xl font-display font-medium text-light-warm uppercase tracking-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-medium text-light-warm uppercase tracking-tight">
             Tech Stack
           </h2>
-          <p className="text-light-taupe text-lg max-w-xl font-light leading-relaxed">
+          <p className="text-light-taupe text-base md:text-lg max-w-xl font-light leading-relaxed">
             A keyboard of tools and technologies I build with.
           </p>
         </motion.div>
